@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>12-jQuery中的off方法</title>
+    <script src='12-ljQuery-1.2.11.js'></script>
+        <script>
+            $(function () {
+                function test1() {
+                    alert('test1');
+                }
+                function test2() {
+                    alert('test2');
+                }
+                function test3() {
+                    alert('test3');
+                }
+                function test4() {
+                    alert('test4');
+                }
+
+                $('div').on('click', test1);
+                $('div').on('click', test2);
+                $('div').on('click', test3);
+                $('div').on('click', test4);
+
+//                $('div').off();
+//                $('div').off('click');
+                $('div').off('click', test2);
+                $('div').off('click', test3);
+            });
+
+//            window.onload = function () {
+                /*
+                // 1.obj  需要添加事件的对象, 例如div
+                // 2.type 添加的事件类型, 例如 click
+                // 3.fn 事件触发之后的回调
+                function addEvent(obj, type, callBack) {
+                    // 1.判断是否支持addEventLister
+                    if(obj.addEventListener){
+                        obj.addEventListener(type, callBack);
+                    }else{
+                        // IE8
+                        obj.attachEvent('on'+type, callBack);
+                    }
+                }
+                function removeEvent(obj, type, callBack) {
+                    // 0.安全校验
+
+                    // 1.判断是否支持removeEventListener
+                    if(obj.removeEventListener){
+                        obj.removeEventListener(type, callBack);
+                    }else{
+                        obj.detachEvent('on'+type, callBack);
+                    }
+                }
+
+                function test1() {
+                    alert('test1');
+                }
+                function test2() {
+                    alert('test2');
+                }
+                var div = document.querySelector('div');
+                addEvent(div, 'click', test1);
+                addEvent(div, 'click', test2);
+
+                // 移出某一个事件
+//                div.removeEventListener('click', test1);
+                removeEvent(div, 'click', test1);
+                */
+                /*
+                var arr = [1, 3, 5, 7];
+                arr.splice(1, 1);
+                console.log(arr);
+                */
+//            }
+        </script>
+</head>
+<body>
+<div>div1</div>
+</body>
+</html>
